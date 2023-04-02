@@ -11,4 +11,9 @@ export const Container = styled.div`
     max-width: 1280px;
     padding: 0 20px;
     margin: 0 auto;
+    overflow: hidden;
+    
+    background: #F8CDDA;
+    background: -webkit-linear-gradient(to bottom right, #1D2B64, #F8CDDA);
+    background: linear-gradient(to bottom right, #1D2B64, #F8CDDA);
 `

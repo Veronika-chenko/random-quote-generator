@@ -5,13 +5,16 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    width: 600px;
+    max-width: 400px;
 
     padding: 30px;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05);
+
+    @media screen and (min-width: 768px) {
+        max-width: 600px;
+    }
     
     &::before {
         position: absolute;
@@ -73,11 +76,16 @@ export const Author = styled.p`
 
 export const Footer = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
     width: 100%;
     padding-top: 16px;
     border-top: 1px solid #ccc;
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+    }
 `
 
 export const FeaturesContainer = styled.ul`
@@ -85,6 +93,9 @@ export const FeaturesContainer = styled.ul`
     justify-content: center;
     align-items: center;
     gap: 5px;
+    @media screen and (max-width: 767.98px) {
+        align-self: flex-end;
+    }
 `
 
 export const FeatureButton = styled.button`
@@ -154,5 +165,9 @@ export const NewQuoteButton = styled.button`
         color: #5372F0;
         background-color: #fff;
         border: 1px solid #5372F0;
+    }
+
+    @media screen and (max-width: 767.98px) {
+        width: 100%;
     }
 `

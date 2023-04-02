@@ -12,11 +12,6 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100vw;
-  height: 100vh;
-  background: #F8CDDA;
-  background: -webkit-linear-gradient(to bottom right, #1D2B64, #F8CDDA);
-  background: linear-gradient(to bottom right, #1D2B64, #F8CDDA);
 }
 
 ul {

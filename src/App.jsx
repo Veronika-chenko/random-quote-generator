@@ -1,5 +1,5 @@
 import { Container } from "./App.styled";
-import { QuoteCard } from "./components/QuoteCard/QuoteCard";
+import { QuoteCard } from "./components/QuoteCard";
 
 export const App = () => {
   return (
