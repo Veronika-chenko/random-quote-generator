@@ -5,15 +5,11 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
-    
-    /* min-height: 400px; */
+
     width: 600px;
+
+    padding: 30px;
     background-color: #fff;
-    /* backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-top: 1px solid rgba(255, 255, 255, 0.75);
-    border-left: 1px solid rgba(255, 255, 255, 0.75); */
     border-radius: 20px;
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05);
     
@@ -52,11 +48,12 @@ export const Quote = styled.p`
     font-size: 22px;
     text-align: center;
     margin-bottom: 35px;
+    
 `
 
 export const Author = styled.p`
     display: flex;
-    justify-content: flex-end;
+    align-self: flex-end;
     align-items: center;
     gap: 5px;
     margin-bottom: 35px;
@@ -68,7 +65,7 @@ export const Author = styled.p`
         content: "";
         display: block;
         width: 20px;
-        height: 2px;
+        height: 1px;
         background-color: #000;
         border-radius: 1px;
     }

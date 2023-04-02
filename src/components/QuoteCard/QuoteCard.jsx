@@ -1,13 +1,25 @@
+import { useEffect, useState } from "react";
 import { Author, Card, FeatureButton, FeaturesContainer, Footer, Quote, SubmitButton, Title } from "./QuoteCard.styled"
 import { FaCopy, FaVolumeUp, FaTwitter } from "react-icons/fa";
+import { getRandomQuote } from "../../services/Api";
 
 export const QuoteCard = () => {
+    const [quote, setQuote] = useState(null);
+
+    useEffect(() => {
+        fetchNewQuote();
+    }, [])
+
+    const fetchNewQuote = async () => {
+        const quote = await getRandomQuote();
+        setQuote(quote);
+    }
+
     return (
         <Card>
             <Title>Quote of the Day</Title>
-            <Quote>You are never given a wish without also being given the power to make it come true. You may have to work for it, however.</Quote>
-            <Author>Richard Bach</Author>
-            
+            <Quote>{quote?.quote}</Quote>
+            <Author>{quote?.author}</Author>
             <Footer>
                 <FeaturesContainer>
                     <li>
@@ -20,8 +32,9 @@ export const QuoteCard = () => {
                         <FeatureButton><FaTwitter /></FeatureButton>
                     </li>
                 </FeaturesContainer>
-                <SubmitButton>New Quote</SubmitButton>
+                <SubmitButton onClick={fetchNewQuote}>New Quote</SubmitButton>
             </Footer>
         </Card>
     )
 }
+         
