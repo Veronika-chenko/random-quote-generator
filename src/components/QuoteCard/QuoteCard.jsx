@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import { Author, Card, FeatureButton, FeaturesContainer, Footer, Quote, SubmitButton, Title } from "./QuoteCard.styled"
+import { useEffect, useRef, useState } from "react";
+import { Author, Card, FeatureButton, FeaturesContainer, Footer, Quote, NewQuoteButton, Title, FeatureLink } from "./QuoteCard.styled"
 import { FaCopy, FaVolumeUp, FaTwitter } from "react-icons/fa";
 import { getRandomQuote } from "../../services/Api";
 
 export const QuoteCard = () => {
     const [quote, setQuote] = useState(null);
+    const quoteText = useRef();
 
     useEffect(() => {
         fetchNewQuote();
@@ -15,10 +16,16 @@ export const QuoteCard = () => {
         setQuote(quote);
     }
 
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(quoteText.current.innerText);
+    }
+
+    const twitterRef = `http://twitter.com/intent/tweet?text=${quote?.quote + " " + quote?.author}`
+
     return (
         <Card>
             <Title>Quote of the Day</Title>
-            <Quote>{quote?.quote}</Quote>
+            <Quote ref={quoteText}>{quote?.quote}</Quote>
             <Author>{quote?.author}</Author>
             <Footer>
                 <FeaturesContainer>
@@ -26,13 +33,15 @@ export const QuoteCard = () => {
                         <FeatureButton><FaVolumeUp /></FeatureButton>
                     </li>
                     <li>
-                        <FeatureButton><FaCopy /></FeatureButton>
+                        <FeatureButton onClick={copyToClipboard}><FaCopy /></FeatureButton>
                     </li>
                     <li>
-                        <FeatureButton><FaTwitter /></FeatureButton>
+                        <FeatureLink href={twitterRef} target="_blank" rel="noreferrer">
+                            <FaTwitter />
+                        </FeatureLink>
                     </li>
                 </FeaturesContainer>
-                <SubmitButton onClick={fetchNewQuote}>New Quote</SubmitButton>
+                <NewQuoteButton onClick={fetchNewQuote}>New Quote</NewQuoteButton>
             </Footer>
         </Card>
     )

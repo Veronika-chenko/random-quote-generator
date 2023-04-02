@@ -112,7 +112,32 @@ export const FeatureButton = styled.button`
     }
 `
 
-export const SubmitButton = styled.button`
+export const FeatureLink = styled.a`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    border: 1px solid #5372F0;
+    transition: background-color 300ms linear;
+
+    &:hover {
+        background-color: #5372F0;
+        & svg {
+            fill: #fff;
+        }
+    }
+
+    & svg {
+        width: 15px;
+        height: 15px;
+        fill: #5372F0;
+        transition: fill 300ms linear;
+    }
+`
+
+export const NewQuoteButton = styled.button`
     padding: 10px 20px;
 
     font-family: 'Poppins';
