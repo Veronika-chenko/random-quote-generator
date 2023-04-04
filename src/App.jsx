@@ -1,10 +1,12 @@
-import { Container } from "./App.styled";
+import { Section, Container } from "./App.styled";
 import { QuoteCard } from "./components/QuoteCard";
 
 export const App = () => {
   return (
-    <Container>
-      <QuoteCard />
-    </Container>
+    <Section>
+      <Container>
+        <QuoteCard />
+      </Container>
+    </Section>
   );
 }
