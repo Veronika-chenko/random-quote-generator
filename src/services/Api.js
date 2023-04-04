@@ -1,12 +1,11 @@
 import axios from 'axios';
 
-const API_KEY = 'YABs29hy/C/BcZTvuIvWxw==2VeizKgtYY8APR5O'; 
+const API_KEY = 'YABs29hy/C/BcZTvuIvWxw==2VeizKgtYY8APR5O';
 
 const options = {
     method: "GET",
     url: "https://api.api-ninjas.com/v1/quotes",
     headers: { "X-Api-Key": API_KEY},
-    contentType: "application/json",
 };
 
 export const getRandomQuote = async () => {
